@@ -1,0 +1,10 @@
+[2026-11-19 08:15:02] INFO: User login successful. user_id=1042, email="alex.rivera@example.com", ip=192.168.1.45
+[2026-11-19 08:17:44] WARN: High memory usage detected on server-01 (84.5%).
+[2026-11-19 08:19:10] ERROR: Connection timeout while reaching database_primary. Error code: ERR_504
+[2026-11-19 08:22:01] INFO: Order #ORD-99812 processed. Total: $149.99 | Status: SHIPPED
+[2026-11-19 08:25:33] DEBUG: Cache miss for key "session_token_88a7f9". Fetching from disk.
+[2026-11-19 08:30:00] INFO: User login successful. user_id=2089, email="sam.chen@testdomain.org", ip=10.0.0.12
+[2026-11-19 08:31:15] ERROR: Failed payment attempt for Order #ORD-99813. Reason: INSUFFICIENT_FUNDS (Code: ERR_402)
+[2026-11-19 08:35:49] INFO: Backup completed in 12.4s. Archive: backup_2026_11_19.tar.gz (Size: 450MB)
+[2026-11-19 08:40:12] WARN: Disk space low on /dev/sda1 — 91% full. Contact admin@example.com.
+[2026-11-19 08:45:00] INFO: Scheduled task "cleanup_temp_files" finished with 0 errors.
