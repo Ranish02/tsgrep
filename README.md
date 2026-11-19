@@ -22,7 +22,7 @@ bun build main.ts --compile --outfile ./build/tsgrep
 
 Either run using the following command
 
-for Listing Directories:
+for Searching string within all the files in the directory and subdirectories:
 
 ```bash
  ./build/tsgrep search [directory] [searchstring]
