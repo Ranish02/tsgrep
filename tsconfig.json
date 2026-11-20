@@ -4,7 +4,10 @@
     "module": "CommonJS",
     "types": ["node"],
     "strict": true,
-    "outDir": "dist"
+    "outDir": "dist",
+    "declaration": true,
+    "emitDeclarationOnly": true,
+    "allowImportingTsExtensions" : true
   },
   "include": ["*.ts"]
 }

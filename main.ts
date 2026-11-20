@@ -1,9 +1,7 @@
-import { parseArguments } from "./argument";
-import { colors } from "./colors";
-
+import { parseArguments } from "./argument.ts";
+import { colors } from "./colors.ts";
 
 async function main(){
-    console.log(`\n\t\t\t${colors.cyan} Welcome to Tsgrep ! ${colors.reset}\n`);
     const args : string[] = process.argv.slice(2);
     await parseArguments(args);
     return console.log("Program exited!");

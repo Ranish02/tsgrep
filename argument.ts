@@ -1,6 +1,6 @@
 import { readFile } from "node:fs/promises";
 import { opendir } from "node:fs/promises";
-import { colors } from "./colors";
+import { colors } from "./colors.ts";
 
 type stringLocation = {
     row: number,
@@ -90,19 +90,18 @@ async function searchTextInDirectory(dirName: string, searchString: string, dept
     for await (const item of dir) {
         if (item.isDirectory()) {
             const fullDirName = dirName + "/" + item.name;
-            console.log('\t'.repeat(depth), "-", fullDirName)
+            // console.log('\t'.repeat(depth), "-", fullDirName)
             await searchTextInDirectory(fullDirName, searchString, depth + 1);
         } else {
             const rs = await searchTextInFile(dir.path + "/" + item.name, searchString);
-            if (rs.isFound) {
-                console.log('\t'.repeat(depth), colors.green, item.name, `${colors.reset}`);
-            } else {
-                console.log('\t'.repeat(depth), "-", item.name);
-            }
+            // if (rs.isFound) {
+            //     console.log('\t'.repeat(depth), colors.green, item.name, `${colors.reset}`);
+            // } else {
+            //     // console.log('\t'.repeat(depth), "-", item.name);
+            // }
         }
     }
-    dir.close();
-    return false;
+    return true;
 }
 
 async function readDirectory(dirName: string, depth: number): Promise<boolean> {
@@ -121,11 +120,11 @@ async function readDirectory(dirName: string, depth: number): Promise<boolean> {
             console.log('\t'.repeat(depth), "-", item.name);
         }
     }
-    dir.close();
     return false;
 }
 
 function printSyntax() {
+    console.log(`\n\t${colors.cyan} Welcome to Tsgrep ! ${colors.reset}\n`);
     console.log("1) To search for a string within file directory use the following command syntax:\n\t")
     console.log(`$ ${colors.blue} tsgrep search [directory] [searchstring] ${colors.reset} \n\t`)
     console.log("- replace [directory] with the file directory from where you want to start the search and replace [searchstring] with the string you want to search \n")
